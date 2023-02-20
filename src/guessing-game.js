@@ -5,24 +5,18 @@ class GuessingGame {
         this.min = min;
         this.max = max;
     }
-
+    
     guess() {
-        while (this.min <= this.max) {
-            this.guessed = Math.round((this.min + this.max) / 2 );
-            return this.guessed;
-        }
+        this.result = Math.round((this.min + this.max) / 2);
+        return this.result;
     }
 
     lower() {
-        if (this.guessed < this.max) {
-            this.max = this.guessed;
-        }
+        this.max = this.result;
     }
 
     greater() {
-        if (this.guessed > this.min) {
-            this.min = this.guessed;
-        }
+        this.min = this.result;        
     }
 }
 
